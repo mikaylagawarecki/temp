@@ -1,3 +1,14 @@
+"""
+This file contains an implementation of a TransformerEncoderLayer.
+
+Explicit differences from nn.TransformerEncoderLayer:
+
+- No need for {tgt/memory}_padding_mask with nested tensors :)
+- Only supports batch_first=True: nested tensors do not support seq_len as the
+  first dimension
+"""
+
+
 import torch
 import torch.nn as nn
 
